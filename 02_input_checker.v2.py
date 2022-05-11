@@ -1,28 +1,56 @@
 # checks user choice is 'integer', 'text' or 'image'
+
 def user_choice():
-    
-    valid = False
+
+    # lists of valid responses
+    text_ok = ["text", "t", "txt"]
+    integer_ok = ["integer", "int", "#", "number"]
+    image_ok = ["image", "img", "pix", "picture", "pic"]
+
+    valid = False 
     while not valid:
 
-        # ask user for choice and change response to lowercase
+        # ask user for choice and change response to lower case
         response = input("file type (integer / text / image): ").lower()
 
-        # if they choose 't' or 'text', return 'text'
-        text_ok = []
-        if response == "text" or response == "t":
-            return "text"
+        # checks for valid response and returns text, integer or image
+        
+        if response in text_ok:
+           return "text"
+            
+        elif response in integer_ok:
+          return "integer"
 
+        elif response in image_ok: 
+            return "image"
+
+        elif response == "i":
+            want_integer = input("press <enter> for an integer or any key for")
+            if want_integer == "":
+                return "integer"
+            else:
+                return "image"
+        
         else:
-            # if response is not valid, output an error
-            print("please choose a valid file type!")
+            # if response is not valid. output and error
+            print ("please choose a valid file type!")
             print()
+            
+
+            
+        
+        
+
+        
 
 
-# Main routine goes here
-data_type = user_choice()
-print("you chose", data_type)
+            
+            
+            
 
-print()
+
+        
+ 
 
          
 
