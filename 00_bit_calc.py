@@ -54,6 +54,31 @@ def user_choice():
             print()
 
 
+# checks input is a number more thatn zero
+def num_check(question, low):
+    valid = False
+    while not valid:
+
+        error = "please enter a number that is more than  (or equal to) {}".format(low)
+        
+        try:
+    
+            # ask user to enter a number
+            response = int(input(question))
+
+            # checks number is more thatn zero
+            if response >= low:
+                return response
+
+            # outputs error if input is invalid
+            else:
+                print(error)
+                print()
+
+        except ValueError:
+            print(error)
+
+
 # Main routine goes here
 
 # heading
@@ -70,6 +95,16 @@ while keep_going == "":
     print("you chose", data_type)
 
     # For integers, ask for integer
-    # (must be an integer more than / equal to 0)
+    if data_type == "integer":
+        image_width = num_check("Enter integer: ", 0)
 
     # For images, ask for width and height
+    # (must be an integers more than / equal to 1)
+    elif data_type == "image":  
+        image_width = num_check("Image width? ", 1)
+        print()
+        image_height = num_check("Image height? ", 1)
+
+# for text, ask for a string
+else:
+    var_text = input("enter some text: ")        
