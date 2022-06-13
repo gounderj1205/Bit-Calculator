@@ -116,8 +116,7 @@ def image_bits():
     # output answer with working
     print()
 
-    print("# of pixels = {} x {} = {}".format(image_height,
-                                            image_width, num_pixels))
+    print("# of pixels = {} x {} = {}".format(image_height, image_width, num_pixels))
     print("# bits = {} x 24 = {}".format(num_pixels, num_bits))
 
     return ""
@@ -140,7 +139,7 @@ def int_bits():
 
      # output answer with working
     print()
-    print("{} in binary is {}".fromat(var_integer, var_binary))
+    print("{} in binary is {}".format(var_integer, var_binary))
     print("# of bits is {}".format(num_bits))
     print()
 
@@ -170,10 +169,9 @@ while keep_going == "":
         image_bits()
 
 # For text, ask for a string
-else:
-    text_bits()
+    else:
+        text_bits()
 
-print()
-keep_going = input("press <enter> to continue or any key to quit ")
-
-print()
+    print()
+    keep_going = input("press <enter> to continue or any key to quit ")
+    print()
